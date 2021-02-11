@@ -1,0 +1,74 @@
+<% if (locals.validation_error!=undefined) { %> <%
+validation_error.forEach(element => { %>
+  <div class="alert alert-danger" role="alert">
+  <%=element.msg %>
+</div>
+<% }) %> <% } %>
+<form id="tiny_mce" action="/recipe/<%= recipe.id %>?_method=PUT" method="post">
+  <div class="container recipe-edit-container form-group me-5">
+    <input type="file" name="cover" class="filepond recipe-cover" />
+  </div>
+  <div class="text-center">
+    <label class="form-label" for="title">Başlık</label>
+    <input
+      type="text"
+      name="title"
+      value="<%= recipe.title %> "
+      class="form-control"
+    />
+  </div>
+  <div class="text-center">
+    <label class="form-label" for="category">Kategori</label>
+    <input
+      type="text"
+      name="category"
+      value="<%= recipe.category %> "
+      class="form-control"
+    />
+  </div>
+  <div class="text-center">
+    <h2>Malzemeler</h2>
+    <textarea
+      class="addIngredients form-control"
+      id="addIngredients"
+      name="ingredients"
+    >
+              <%= recipe.ingredients %> 
+          </textarea
+    >
+  </div>
+  <div class="text-center">
+    <label class="form-label" for="instructions">Yapılışı</label>
+    <textarea name="instructions" cols="30" rows="10" class="form-control">
+              <%= recipe.instructions %> 
+          </textarea
+    >
+  </div>
+  <div class="text-center">
+    <label class="form-label" for="author">Yazar</label>
+    <select name="author" class="form-select">
+      <% authors.forEach(author => { %> <% if (author.id === recipe.author) { %>
+      <option selected label="<%= author.firstname %>" value="<%= author.id %>">
+        <% } else { %>
+      </option>
+
+      <option label="<%= author.firstname %>" value="<%= author.id %>">
+        <% } %> <% }) %>
+      </option>
+    </select>
+  </div>
+  <div class="text-end recipe-edit-container-settings">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <a
+        class="btn btn-danger rounded border-0"
+        href="/recipe/<%= recipe.id %> "
+      >
+        <i class="far fa-times-circle"></i> İptal</a
+      >
+      <button class="btn btn-warning ms-2 border-0 text-white" type="submit">
+        <i class="fas fa-redo"></i>
+        Güncelle
+      </button>
+    </div>
+  </div>
+</form>

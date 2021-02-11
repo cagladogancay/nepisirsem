@@ -1,0 +1,53 @@
+<div class="container col-lg-6 offset-lg-3">
+  <div class="row justify-content-center">
+    <img class=" mt-2 rounded-circle show-index-author-img img-fluid shadow-lg  mx-auto d-block  " src="<%- author.coverImagePath %>" alt="" />
+    <h1 class="text-center mt-2"><%= author.firstname.charAt(0).toUpperCase()+author.firstname.slice(1) + ' ' + author.lastname.charAt(0).toUpperCase()+author.lastname.slice(1) %></h1>
+    <h3 class="text-center"><%= author.username %></h3>
+    <h3 class="text-center"><%= author.city %></h3>
+
+  </div> 
+</div>
+
+<div class="container">
+  <div class="row recipe-row">
+
+    <% if(recipes.length>0){ %>
+      <% recipes.forEach(recipe => { %>
+        <div class="col-md-4 col-sm-6 col-xs-12 d-flex">
+          <div class="card rounded flex-fill text-center bg-danger  text-white my-2" style="width: 18rem;">
+      <a href="/recipe/<%= recipe.id %> ">
+        <img class="rounded card-img-top recipe-img" src=" <%= recipe.coverImagePath %> " alt="">
+      </a>
+       
+    
+          
+    
+          <h5 class="card-title mt-2 author-show-title"><%= recipe.title.charAt(0).toUpperCase()+recipe.title.slice(1) %></h5>
+    
+        
+       <div class="card-body author-show-category">
+     <span class="badge rounded-pill  bg-light text-dark"> <%= recipe.category.charAt(0).toUpperCase()+recipe.category.slice(1) %> </span></div>
+       </div>
+     
+      </div>
+        <% }) %>
+      <% } else { %>
+      <h5 class="card-title text-center">Burada hiç tarif yok</h5>
+      <img class="img w-75 mx-auto d-block" src="/images/sad.svg" alt="">
+      <% } %>
+
+
+ 
+
+
+
+
+
+
+
+</div>
+  </div>
+
+
+
+

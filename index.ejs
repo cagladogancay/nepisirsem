@@ -1,0 +1,35 @@
+<h2 class="recipe-main-title">Son Eklenen Tarifler</h2>
+<div class="row recipe-row">
+  <% recipes.forEach(recipe => { %>
+
+  <div class="col-md-4 col-sm-6 col-xs-12 d-flex">
+    <div class="card flex-fill">
+      <a href="/recipe/<%=recipe.id %>">
+        <img
+          src="<%= recipe.coverImagePath %>"
+          class="card-img-top recipe-img"
+        />
+      </a>
+      <h5 class="card-title text-center recipe-title">
+        <%= recipe.title.charAt(0).toUpperCase()+recipe.title.slice(1) %>
+      </h5>
+
+      <div class="card-body text-center recipe-body">
+        <a class="recipe-link" href="/authors/<%= recipe.author.id %> ">
+          <p class="text-end">
+            By
+            <b
+              ><%=
+              recipe.author.firstname.charAt(0).toUpperCase()+recipe.author.firstname.slice(1)
+              + ' '+
+              recipe.author.lastname.charAt(0).toUpperCase()+recipe.author.lastname.slice(1)
+              %></b
+            >
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <% }) %>
+</div>

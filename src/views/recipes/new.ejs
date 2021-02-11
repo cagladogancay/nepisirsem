@@ -1,0 +1,64 @@
+<% if (locals.validation_error!=undefined) { %> <%
+validation_error.forEach(element => { %>
+  <div class="alert alert-danger" role="alert">
+  <%=element.msg %>
+</div>
+<% }) %> <% } %>
+<form id="tiny_mce" action="/" method="post">
+  <div class="container recipe-edit-container form-group me-5">
+    <input type="file" name="cover" class="filepond cover" />
+  </div>
+  <div class="text-center">
+    <label class="form-label" for="title">Başlık</label>
+    <input
+      class="form-control"
+      type="text"
+      name="title"
+      placeholder="Başlık giriniz"
+    />
+  </div>
+  <div class="text-center">
+    <label class="form-label" for="category">Kategori</label>
+    <input
+      class="form-control"
+      type="text"
+      name="category"
+      placeholder="Kategori giriniz"
+    />
+  </div>
+  <div class="text-center">
+    <h2>Malzemeler</h2>
+    <textarea
+      class="addIngredients form-control"
+      id="addIngredients"
+      name="ingredients"
+    ></textarea>
+  </div>
+  <div class="text-center">
+    <label class="form-label" for="instructions">Yapılışı</label>
+    <textarea
+      class="form-control"
+      name="instructions"
+      cols="30"
+      rows="10"
+    ></textarea>
+  </div>
+  <div class="text-center">
+    <label class="form-label" for="author">Yazar</label>
+    <select name="author" class="form-select">
+      <% authors.forEach(author => { %> <% if (author.id === recipe.author) { %>
+      <option selected label="<%= author.firstname %>" value="<%= author.id %>">
+        <% } else { %>
+      </option>
+
+      <option label="<%= author.firstname %>" value="<%= author.id %>">
+        <% } %> <% }) %>
+      </option>
+    </select>
+  </div>
+  <div class="text-end recipe-edit-container-settings">
+    <button class="btn btn-success ms-2 border-0 text-white" type="submit">
+      <i class="fas fa-plus"></i> Tarif Ekle
+    </button>
+  </div>
+</form>

@@ -1,0 +1,62 @@
+<% if (locals.validation_error!=undefined) { %> <%
+validation_error.forEach(element => { %>
+<div class="alert alert-danger" role="alert"><%=element.msg %></div>
+<% }) %> <% } %>
+<form action="/authors" class="col-lg-6 offset-lg-3" method="post">
+  <div class="row justify-content-center">
+    <div class="container recipe-edit-container form-group text-center me-5">
+      <input type="file" name="cover" class="filepond cover" />
+    </div>
+    <div>
+      <label class="form-label" for="name">İsim:</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="İsminizi giriniz"
+        name="firstname"
+      />
+    </div>
+    <div>
+      <label class="form-label" for="name">Soyisim:</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Soyisminizi giriniz"
+        name="lastname"
+      />
+    </div>
+    <div>
+      <label class="form-label" for="name">Kullanıcı Adı:</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Kullanıcı adınızı giriniz"
+        name="username"
+      />
+    </div>
+    <div>
+      <label class="form-label" for="name">Email:</label>
+      <input
+        class="form-control"
+        type="email"
+        placeholder="Emailinizi giriniz"
+        name="email"
+      />
+    </div>
+    <div>
+      <label class="form-label" for="cities">Şehirler</label>
+      <select name="cities" class="form-select">
+      <% cities.forEach(city => { %>
+ <option label="<%=city.name%>" value="<%=city.name%>">
+  <% }) %>
+ </option>
+</select>
+    </div>
+    <div class="text-end recipe-edit-container-settings">
+      <button class="btn btn-success ms-2 border-0 text-white" type="submit">
+        <i class="fas fa-check"></i>
+        Kaydet
+      </button>
+    </div>
+  </div>
+</form>

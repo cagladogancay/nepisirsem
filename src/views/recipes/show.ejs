@@ -1,0 +1,62 @@
+<div class="row align-items-start">
+  <div class="col-9">
+    <div class="container">
+      <div class="recipe-show-container mt-5">
+        <div class="subject">
+          <h2 class="text-center text-white">
+            <%= recipe.title.charAt(0).toUpperCase()+recipe.title.slice(1) %>
+          </h2>
+        </div>
+        <img
+          class="rounded mx-auto d-block img-fluid w-75"
+          src=" <%= recipe.coverImagePath %> "
+        />
+      </div>
+      <h3 class="text-center my-5">
+        <%= recipe.title.charAt(0).toUpperCase()+recipe.title.slice(1) %> Tarifi
+        İçin Malzemeler
+      </h3>
+      <div
+        class="container text-center bg-danger text-light  rounded w-75"
+      >
+        <p><%- recipe.ingredients %></p>
+      </div>
+      <h3 class="text-center my-5">
+        <%= recipe.title.charAt(0).toUpperCase()+recipe.title.slice(1) %> Tarifi
+        Yapılışı
+      </h3>
+      <div
+        class="container text-center .bg-light  border border-dark rounded w-75"
+      >
+        <p><%= recipe.instructions%></p>
+      </div>
+      <div class="container w-75 my-2 text-center">
+        <div class="btn-group  " role="group" aria-label="Basic example">
+          <a
+            class="btn btn-warning me-2 rounded border-0 text-white"
+            href="/recipe/<%= recipe.id %>/edit "
+          >
+            <i class="far fa-edit"></i> Tarifi Düzenle</a
+          >
+          <%- include('../partials/deleteForm', { url: `/recipe/${recipe.id}` })
+          %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="container my-5">
+      <div class="card text-center bg-danger  text-white" style="width: 18rem;">
+      <a href="/authors/<%=recipe.author.id  %> ">
+        <img src=" <%= recipe.author.coverImagePath %> " class="mt-2 card-img-top rounded-circle show-index-author-img img-fluid shadow-lg  mx-auto d-block  " alt="...">
+      </a>
+       
+        <div class="card-body">
+          <h5 class="card-title "><%= recipe.author.firstname.charAt(0).toUpperCase()+recipe.author.firstname.slice(1) +' '+ recipe.author.lastname.charAt(0).toUpperCase()+recipe.author.lastname.slice(1) %> </h5>
+         
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
