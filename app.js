@@ -29,7 +29,7 @@ app.use(methodOverride('_method'));
 app.use(sesions(
   {
     key:"mysite.sid.uid.whatever",
-    secret:process.env["SECRET"],
+    secret:process.env.SECRET,
     resave:false,
     saveUninitialized:true,
     cookie:{
