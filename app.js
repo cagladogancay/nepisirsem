@@ -28,6 +28,7 @@ app.use(methodOverride('_method'));
 //session flash
 app.use(sesions(
   {
+    key:"mysite.sid.uid.whatever",
     secret:process.env["SECRET"],
     resave:false,
     saveUninitialized:true,
