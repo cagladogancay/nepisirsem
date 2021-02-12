@@ -28,7 +28,7 @@ app.use(methodOverride('_method'));
 //session flash
 app.use(sesions(
   {
-    secret:process.env.SECRET,
+    secret:process.env[SECRET],
     resave:false,
     saveUninitialized:true,
     cookie:{
