@@ -32,7 +32,7 @@ app.use(sesions(
     resave:false,
     saveUninitialized:true,
     cookie:{
-      maxAge: 30000
+      maxAge: 2678400000 
     }
   }
 ));
@@ -42,21 +42,8 @@ app.use('/', indexRouter);
 app.use('/authors',authorRouter);
 
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
 
-// error handler
-app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
