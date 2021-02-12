@@ -1,4 +1,4 @@
-<div class="container col-lg-6 offset-lg-3">
+<div class="container col-lg-6 offset-lg-3 ">
   <div class="row justify-content-center">
     <img class=" mt-2 rounded-circle show-index-author-img img-fluid shadow-lg  mx-auto d-block  " src="<%- author.coverImagePath %>" alt="" />
     <h1 class="text-center mt-2"><%= author.firstname.charAt(0).toUpperCase()+author.firstname.slice(1) + ' ' + author.lastname.charAt(0).toUpperCase()+author.lastname.slice(1) %></h1>
@@ -13,8 +13,8 @@
 
     <% if(recipes.length>0){ %>
       <% recipes.forEach(recipe => { %>
-        <div class="col-md-4 col-sm-6 col-xs-12 d-flex">
-          <div class="card rounded flex-fill text-center bg-danger  text-white my-2" style="width: 18rem;">
+        <div class="col-md-6 col-sm-12 col-xs-12 d-flex">
+          <div class="card rounded flex-fill text-center bg-danger  text-white my-2">
       <a href="/recipe/<%= recipe.id %> ">
         <img class="rounded card-img-top recipe-img" src=" <%= recipe.coverImagePath %> " alt="">
       </a>

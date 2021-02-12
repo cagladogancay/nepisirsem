@@ -4,7 +4,8 @@ validation_error.forEach(element => { %>
   <%=element.msg %>
 </div>
 <% }) %> <% } %>
-<form id="tiny_mce" action="/" method="post">
+<form  action="/" class="col-lg-6 offset-lg-3" method="post">
+ <div class="row justtify-content-center">
   <div class="container recipe-edit-container form-group me-5">
     <input type="file" name="cover" class="filepond cover" />
   </div>
@@ -61,4 +62,9 @@ validation_error.forEach(element => { %>
       <i class="fas fa-plus"></i> Tarif Ekle
     </button>
   </div>
+  
+  
+  </div>
+ 
+ 
 </form>

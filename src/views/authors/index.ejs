@@ -4,9 +4,9 @@
 <div class="container">
   <div class="row">
       <% authors.forEach(author => { %>
-        <div class="col-4">
-        <div class="card text-center bg-danger  text-white my-2" style="width: 18rem;">
-     <div class="deneme">
+        <div class="col-md-4 col-sm-6 col-xs-12 d-flex">
+        <div class="card text-center bg-danger  text-white my-2 flex-fill" >
+     <div class="show-settings">
       <div class="text-end container author-index-hide">
         <a class="btn btn-sm  text-white" href="/authors/<%= author.id %>/edit ">  <i class="fas fa-user-edit"></i></a>
         <%- include('../partials/deleteForm',

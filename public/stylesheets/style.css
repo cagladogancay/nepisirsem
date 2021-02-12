@@ -28,10 +28,7 @@
   height: 250px;
 }
 
-/* .recipe-show-img {
-  width: 1000px;
-  height: 667px;
-} */
+
 ul {
   list-style-type: none;
 }
@@ -43,16 +40,6 @@ ul {
 .recipe-edit-container {
   margin: 2% 2% 2% 0;
   height: auto;
-}
-#tiny_mce {
-  display: block !important;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-#tiny_mce .addIngredients {
-  float: left;
-  width: 100%;
 }
 
 .recipe-edit-container-settings {
@@ -72,7 +59,7 @@ ul {
 }
 .subject h2 {
   text-shadow: 1px 2px 3px #4c4c4c;
-  font-size: 60px;
+  font-size: 5vh;
 }
 
 .show-index-author-img {
@@ -81,13 +68,13 @@ ul {
 }
 
 
-.deneme div {
+.show-settings div {
   visibility: hidden;
 }
-.deneme:hover{
+.show-settings:hover{
   cursor: pointer;
 }
-.deneme:hover div {
+.show-settings:hover div {
   visibility: visible;
 }
 .author-show-title{
